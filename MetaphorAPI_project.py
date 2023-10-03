@@ -1,5 +1,5 @@
 from metaphor_python import Metaphor
-api_key = "a8ed57b5-a41c-4308-8fc8-a0d20e582077"
+api_key = "a8ed57b5-a41c-4308-8fc8-a0d20e582077" ##This is my api_key please don't steal it
 metaphor = Metaphor(api_key)
 
 #Specifications of what I'm looking for

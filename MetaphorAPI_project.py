@@ -3,12 +3,12 @@ api_key = "a8ed57b5-a41c-4308-8fc8-a0d20e582077"
 metaphor = Metaphor(api_key)
 
 #Specifications of what I'm looking for
-def get_comic_recommendations(user_preferences):
+def get_comic_recommendations(user_preferences, results):
     # Use the Metaphor API to search for DC comics based on user preferences
     query = 'Popular Comics'
     options = {
         'type': 'neural',  # To get high-quality content
-        'num_results': 10  # Number of results you want
+        'num_results': results  # Number of results you want
     }
     search_response = metaphor.search(query, **options)
 
@@ -33,10 +33,10 @@ def main():
     print("Welcome to the Comic Recommendation Bot!")
     
     # Collect user preferences
-    user_preferences = input("Tell me your preferences (e.g., superheroes, genres): ")
-
+    user_preferences = input("Tell me what superhero you'd like me to find comics for: ")
+    res = input("How many results would you like for me to display: ")
     # Get comic recommendations based on user preferences
-    recommendations = get_comic_recommendations(user_preferences)
+    recommendations = get_comic_recommendations(user_preferences, res)
 
     if isinstance(recommendations, list):
         print("\nHere are some DC comics recommendations for you:")
